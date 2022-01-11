@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace cs08_paskaita
@@ -16,21 +17,22 @@ namespace cs08_paskaita
 
             //Kartojimas
 
-            //Rep1();
+            //Rep1(); <-- Kartojimas
             //Rep2();
             //Rep3();
             //Rep4();
             //Rep5();
             //Rep6();
-            Rep7();
-            Rep8();
+            //Rep7();
+            //Rep8();
             //Rep9();
             //Rep10();
             //Rep11();
-            //Rep12();
+            Rep12();
+            Rep13();
+            Rep14();
 
-            //Metodų uždaviniai
-            //Problem1();
+            //Problem1(); // <-- Metodų uždaviniai
             //Problem2();
             //Problem3();
             //Problem4();
@@ -167,37 +169,130 @@ namespace cs08_paskaita
         {
             string numbersText = Console.ReadLine();
             string[] numbers = numbersText.Split(' ');
-            string numbersReverseText = string.Join(' ', numbers.Reverse());
 
-            int[] numbersReverse = new int[numbers.Length];
+            int[] numbersReverse = numbers.Select(x => Convert.ToInt32(x)).Reverse().ToArray();
 
-            for (int i = numbers.Length - 1; i >= 0 ; i--)
-            {
-                numbersReverse[i] = int.Parse(numbers[i]);
-            }
-            foreach (var item in numbersReverse)
-            {
-                Console.Write(item);
-            }
-            Console.WriteLine();
+            //string numbersReverseText = string.Join(' ', numbers.Reverse());
+
+            //int[] numbersReverse = new int[numbers.Length];
+            //int index = 0;
+
+            //for (int i = numbers.Length - 1; i >= 0 ; i--)
+            //{
+            //    numbersReverse[index] = int.Parse(numbers[i]);
+            //    index++;
+            //}
+            //foreach (var item in numbersReverse)
+            //{
+            //    Console.Write(item);
+            //}
+            //Console.WriteLine();
         }
 
         public static void Rep9()
         {
+            // Vartotojas įveda 5 skaičius
+            // Programa išveda jų sumą
 
+            int[] numbers = { 1, 2, 3, 4, 5 };
+            int counter = 0;
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                counter += numbers[i];
+            }
+            Console.WriteLine(counter);
         }
 
         public static void Rep10()
         {
+            int[] numbers = { 1, 2, 3, 4, 5 };
+            int[] newNumbers = new int[numbers.Length];
 
+            for (int i = 0; i < newNumbers.Length; i++)
+            {
+                newNumbers[i] = numbers[i];
+            }
+            foreach (var item in newNumbers)
+            {
+                Console.Write(item);
+            }
+            Console.WriteLine(); //<-- cukrus
         }
 
         public static void Rep11()
         {
+            // Dictionary
+            Dictionary<string, string> dictionary = new Dictionary<string, string>();
+            dictionary.Add("Programming", "Defined algorithms that PC follows");
+            dictionary.TryGetValue("Programming", out string value);
 
+            Console.WriteLine(value);
         }
 
         public static void Rep12()
+        {
+            // Upildyti masyvą atsitiktiniais skaičiais
+            // Surasti ir parodyti didžiausią ir mažiaučią elementą
+
+            Random random = new Random(); // <-- kodėl žalia spalva?
+            int[] randomNumbers = new int[10];
+            for (int i = 0; i < randomNumbers.Length; i++)
+            {
+                randomNumbers[i] = random.Next(1, 100);
+            }
+
+            int smallsestNumber = randomNumbers[0];
+
+            foreach (var number in randomNumbers)
+            {
+                if (number < smallsestNumber)
+                {
+                    smallsestNumber = number;
+                }
+            }
+
+            int bigestNumber = randomNumbers[0];
+
+            foreach (var number in randomNumbers)
+            {
+                if (number > bigestNumber)
+                {
+                    bigestNumber = number;
+                }
+            }
+            Console.WriteLine("List is: ");
+            foreach (var item in randomNumbers)
+            {
+                Console.Write($"{item} ");
+            }
+            Console.WriteLine(); // <-- cukrus eilutei
+            Console.WriteLine($"Smallest number: {smallsestNumber}");
+            Console.WriteLine($"Biggest number: {bigestNumber}");
+
+            //alternatyviai:
+            Console.WriteLine(randomNumbers.Min());
+            Console.WriteLine(randomNumbers.Max());
+        }
+
+        public static void Rep13()
+        {
+            Random random = new Random();
+            int[] firstRandomNumbers = new int[5];
+            int[] secondRandomNumbers = new int[5];
+            for (int i = 0; i < firstRandomNumbers.Length; i++)
+            {
+                firstRandomNumbers[i] = random.Next(1, 100);
+                secondRandomNumbers[i] = random.Next(1, 100);
+            }
+
+            int[] appendedArrays = new int[firstRandomNumbers.Length + secondRandomNumbers.Length];
+
+            firstRandomNumbers.CopyTo(appendedArrays, 0);
+            secondRandomNumbers.CopyTo(appendedArrays, firstRandomNumbers.Length);
+        }
+
+        public static void Rep14()
         {
 
         }
