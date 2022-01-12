@@ -294,7 +294,7 @@ namespace cs08_paskaita
 
         public static void Rep14()
         {
-
+            //
         }
 
         public static void Problem1()
@@ -438,6 +438,36 @@ namespace cs08_paskaita
                     count += i;
                 }
             }
+        }
+
+        public static void Problem9()
+        {
+            // Palindromas - (gr.palindromos - bėgantis atgal, grįžtantis):
+            // 1.žodis, eilėraštis arba frazė, skaitomi iš kairės į dešinę ir
+            // iš dešinės į kairę, išlaikantys tą pačia prasmę
+            // pvz., lietuvių k. žodis: „Savas“, sakinys „Abu gaišo po šia guba“
+        }
+
+        public static void Problem10()
+        {
+            // Padaryti funkciją, kuri parodo X Fibonačio skaičių. Seka prasideda
+            // šiais skaičiais 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233…
+            // kiekvienas šios sekos skaičius lygus dviejų prieš jį einančių skaičių sumai
+        }
+
+        public static void Problem11()
+        {
+            // Parašyti funkciją, kuri suskaičiuoja atskirų
+            // bet kokio skaičiaus skaitmenų sumą
+
+        }
+
+        public static void Problem12()
+        {
+            // Parašyti rekursinę funkciją faktorialo skaičiavimui.
+            // Faktorialas – natūrinių skaičių sandauga
+            // nuo 1 iki natūrinio skaičiaus (imtinai).
+            // Žymima šauktuko (!) ženklu. Pvz: 5! = 1*2*3*4*5=120;
         }
     }
 }
