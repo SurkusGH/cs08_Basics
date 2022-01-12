@@ -28,9 +28,9 @@ namespace cs08_paskaita
             //Rep9();
             //Rep10();
             //Rep11();
-            Rep12();
-            Rep13();
-            Rep14();
+            //Rep12();
+            //Rep13();
+            //Rep14();
 
             //Problem1(); // <-- Metodų uždaviniai
             //Problem2();
@@ -41,6 +41,10 @@ namespace cs08_paskaita
             //Problem6();
             //Problem7();
             //Problem8(0, 3, true); // <-- Perkrauta funkcija, int, int; perkrauname su bool
+            //Problem9();
+            //Problem10();
+            //Problem11();
+            Problem12();
         }
 
         public static void Rep1()
@@ -446,6 +450,18 @@ namespace cs08_paskaita
             // 1.žodis, eilėraštis arba frazė, skaitomi iš kairės į dešinę ir
             // iš dešinės į kairę, išlaikantys tą pačia prasmę
             // pvz., lietuvių k. žodis: „Savas“, sakinys „Abu gaišo po šia guba“
+
+            // O tai uždavinys koks...? Spėju, kad išvesti string'ą atvirkščiai
+            Console.WriteLine("Vartotojau, įvesk sakinį, kuris bus atspausdintas atbulai: ");
+            string palindrome = Console.ReadLine();
+
+            palindrome.ToCharArray();
+
+            for (int i = palindrome.Length - 1; i >= 0; i--)
+            {
+                Console.Write(palindrome[i]);
+            }
+            Console.WriteLine();
         }
 
         public static void Problem10()
@@ -459,7 +475,33 @@ namespace cs08_paskaita
         {
             // Parašyti funkciją, kuri suskaičiuoja atskirų
             // bet kokio skaičiaus skaitmenų sumą
+            Console.WriteLine("Programa apskaičiuos atskirų įvesto skaitmens skaitmenų sumą");
+            Console.WriteLine("Vartotojau įvesk skaičių: ");
+            if(!int.TryParse(Console.ReadLine(), out int num))
+            {
+                Console.WriteLine("(!) Netinkama įvestis.");
+                Environment.Exit(1);
+            }
+            char[] tempCharArray = num.ToString().ToCharArray();
 
+
+            List<char> splitNum = new List<char>();
+            for (int i = 0; i < tempCharArray.Length; i++)
+            {
+                splitNum.Add(tempCharArray[i]);
+            }
+
+            int sum = 0;
+            Console.WriteLine($"Skaičiaus: {num}, pavienių skaičių: ");
+            foreach (var item in splitNum)
+            {
+                sum += int.Parse(item.ToString());
+                Console.Write($"{item} ");
+            }
+            Console.WriteLine($"suma yra {sum} ");
+            Console.WriteLine();
+
+            // 100% yra normalesnis sprendimas;
         }
 
         public static void Problem12()
@@ -468,6 +510,23 @@ namespace cs08_paskaita
             // Faktorialas – natūrinių skaičių sandauga
             // nuo 1 iki natūrinio skaičiaus (imtinai).
             // Žymima šauktuko (!) ženklu. Pvz: 5! = 1*2*3*4*5=120;
+
+            // Nematau skirtumo nuo 8 užduoties, + į * pakeiti ir viskas:
+            Console.WriteLine("Vartotojau įvesk 2 integerius: ");
+            int firstNum = int.Parse(Console.ReadLine());
+            int secondNum = int.Parse(Console.ReadLine());
+
+            int count = firstNum;
+            
+            for (int i = firstNum; i <= secondNum; i++)
+            {
+                if (i != 1)
+                {
+                    Console.WriteLine($"{count} * {i} = {count * i}");
+                    count *= i;
+                }
+            }
+            Console.WriteLine(count);
         }
     }
 }
