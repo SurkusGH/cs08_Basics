@@ -42,7 +42,19 @@ namespace cs08_paskaita
             //Problem7();
             //Problem8(0, 3, true); // <-- Perkrauta funkcija, int, int; perkrauname su bool
             //Problem9();
-            Problem10();
+
+            Console.WriteLine("Iki kelinto Fibonacci skaičiaus spaustinti?");// <-- Reikia paduoti int'ą į funckiją, int yra index skaičiaus # Fibonacci eilėje
+            if(!int.TryParse(Console.ReadLine(), out int indexer))
+            {
+                Console.WriteLine("(!) Netinkam įvestis");
+                Environment.Exit(1);
+            }
+
+            for (int i = 0; i < indexer; i++) 
+            {
+                Console.WriteLine(Problem10_Fibonacci(i));
+            }
+
             //Problem11();
             //Problem12();
         }
@@ -464,17 +476,25 @@ namespace cs08_paskaita
             Console.WriteLine();
         }
 
-        public static void Problem10()
+        public static int Problem10_Fibonacci(int index)
         {
             // Padaryti funkciją, kuri parodo X Fibonačio skaičių. Seka prasideda
             // šiais skaičiais 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233…
             // kiekvienas šios sekos skaičius lygus dviejų prieš jį einančių skaičių sumai
 
-            Console.WriteLine("Fibonaci sequence");
             // Iš esmės reikia susikurti generatorių cikle
             // ir targetinti tam tikrą max index'ą cikle
-
-
+            
+            int x = 0;
+            int y = 1;
+            // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233…
+            for (int i = 0; i < index; i++)
+            {
+                int cache = x;
+                x = y;
+                y = cache + y;
+            }
+            return x;
         }
 
         public static void Problem11()
