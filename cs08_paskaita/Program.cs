@@ -42,9 +42,9 @@ namespace cs08_paskaita
             //Problem7();
             //Problem8(0, 3, true); // <-- Perkrauta funkcija, int, int; perkrauname su bool
             //Problem9();
-            //Problem10();
+            Problem10();
             //Problem11();
-            Problem12();
+            //Problem12();
         }
 
         public static void Rep1()
@@ -469,6 +469,12 @@ namespace cs08_paskaita
             // Padaryti funkciją, kuri parodo X Fibonačio skaičių. Seka prasideda
             // šiais skaičiais 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233…
             // kiekvienas šios sekos skaičius lygus dviejų prieš jį einančių skaičių sumai
+
+            Console.WriteLine("Fibonaci sequence");
+            // Iš esmės reikia susikurti generatorių cikle
+            // ir targetinti tam tikrą max index'ą cikle
+
+
         }
 
         public static void Problem11()
@@ -511,7 +517,7 @@ namespace cs08_paskaita
             // nuo 1 iki natūrinio skaičiaus (imtinai).
             // Žymima šauktuko (!) ženklu. Pvz: 5! = 1*2*3*4*5=120;
 
-            // Nematau skirtumo nuo 8 užduoties, + į * pakeiti ir viskas:
+            // Nematau skirtumo nuo 8 užduoties, '+' į '*' pakeiti ir viskas:
             Console.WriteLine("Vartotojau įvesk 2 integerius: ");
             int firstNum = int.Parse(Console.ReadLine());
             int secondNum = int.Parse(Console.ReadLine());
