@@ -42,7 +42,7 @@ namespace cs08_paskaita
             //Problem7();
             //Problem8(0, 3, true); // <-- Perkrauta funkcija, int, int; perkrauname su bool
             //Problem9();
-            Problem10();
+            Problem10();            // <-- sprendimas kuriuo šaukiamas metodas, kuriuo šaukiamas kitas metodas
             //Problem11();
             //Problem12();
         }
